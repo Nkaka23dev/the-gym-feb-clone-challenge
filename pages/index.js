@@ -320,10 +320,10 @@ export default function Home() {
       </section>
       {/* Ukraine section */}
       <section className="px-5">
-        <div className="max-w-[78rem] mx-auto px-24 gap-10 bg-[#FAF7F5] py-20 grid grid-cols-2">
+        <div className="max-w-[78rem] mx-auto px-32 gap-10 bg-[#FAF7F5] py-20 grid grid-cols-2">
           {[1].map((value, idx) => {
             return (
-              <div className="bg-white p-20 shade max-w-sm">
+              <div className="bg-white pt-8 px-4 pb-44 shade max-w-xs">
                 <h1 className="text-2xl">VIJ Campus Tour</h1>
               </div>
             )
