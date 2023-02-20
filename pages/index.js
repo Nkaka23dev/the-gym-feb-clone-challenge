@@ -1,17 +1,20 @@
 import Navbar from "@/components/Navbar";
-import { data2, data3 } from "@/data";
+import { data2, data3 } from "@/data"; 
+import Link from "next/link";
+import { MdArrowForwardIos, MdOutlineArrowBackIosNew,AiOutlineArrowRight } from "react-icons/md";
+import { RxDotFilled } from "react-icons/rx";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <section className="px-5 mt-20">
-        <div className="max-w-[78rem] shade bg-[#FDFDFD] mx-auto grid pb-[6rem] pt-7">
-          <p className="m-auto px-3 text-[2.8rem] max-w-[52rem] font-light text-[#333333]">You don’t just become something, you become someone</p>
+      <section className="px-5 lg:px-0 mt-20 lg:max-w-[98rem]">
+        <div className="max-w-[78rem] shade  bg-[#FDFDFD] mx-auto grid pb-[6rem] pt-7">
+          <p className="m-auto px-3 lg:text-[1.6rem] text-[2.8rem] lg:max-w-full  max-w-[52rem] font-light text-[#333333]">You don’t just become something, you become someone</p>
         </div>
       </section>
-      <section className="px-5 -mt-10 relative z-10">
-        <div className="max-w-[61rem] mx-auto grid grid-cols-5 items-center ">
+      <section className="px-5 lg:px-0  -mt-10 relative z-10">
+        <div className="max-w-[61rem] mx-auto lg:grid-cols-1 grid grid-cols-5 items-center ">
           <div className="py-7 relative px-10 col-span-3 flex justify-between bg-[#0077B3]">
             <input type="text" placeholder="Search..." className="w-full bg-[#0077B3] placeholder-white font-light text-white text-[1.35rem] caret-violet-50 border-b border-white focus:outline-none" />
             <svg className=" text-white absolute right-10 top-8"
@@ -30,7 +33,7 @@ export default function Home() {
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
           </div>
-          <div className="bg-white col-span-2 py-7 px-5 items-center flex justify-between">
+          <div className="bg-white shade col-span-2 py-7 px-5 lg:px-0 items-center flex justify-between">
             <div>
               <p className="text-[1.35rem]  text-[#0077B3]">About VIJ Amsterdam</p>
             </div>
@@ -53,20 +56,33 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 -mt-10">
-        <div className="max-w-[78rem] mx-auto px-24 bg-white pb-40 pt-10 flex justify-between">
-          {[1, 2, 3, 4].map((val, index) => {
+      <section className="px-5 lg:px-0 -mt-10">
+        <div className="max-w-[78rem] mx-auto px-16 bg-white pb-40 pt-10 flex  justify-around items-center">
+          {[{
+            text: "31.704 students",
+            img: "./hat.png"
+          }, {
+            text: "31.704 students",
+            img: "./earth.png"
+          }, {
+            text: "31.704 students",
+            img: "./defense.png"
+          }, {
+            text: "31.704 students",
+            img: "./tt.png"
+          },].map((val, index) => {
             return (
-              <div>
-                <p>31.704 students</p>
+              <div key={index} className="flex space-x-4 items-center justify-between">
+                <img className="w-10" src={val.img} alt="" />
+                <p className="text-md font-bold tracking-wider">31.704 students</p>
               </div>
             )
           })}
         </div>
-        <div className="max-w-[78rem] mx-auto px-32 gap-5 bg-[#FAF7F5] py-20 grid grid-cols-2">
+        <div className="max-w-[78rem] mx-auto lg:px-0 px-32 gap-5 bg-[#FAF7F5] py-20 lg:grid-cols-1 grid grid-cols-2">
           {["Education", "Research"].map((value, idx) => {
             return (
-              <div className="bg-white py-10 px-7 -mt-44 shade">
+              <div className="bg-white py-10 px-7 lg:-mt-0 -mt-44 shade">
                 <div className="flex justify-between items-center">
                   <div>
                     <h1 className="text-[2.35rem] font-medium text-[#0077B3]">{value}</h1>
@@ -96,26 +112,26 @@ export default function Home() {
       </section>
 
       <section className="px-5">
-        <div className="max-w-[78rem] mx-auto  py-16 bg-white">
-          <div className="bg-[#0077B3] px-20 max-w-5xl mx-auto py-16 items-center flex justify-between">
-            <div className="text-2xl font-semibold text-white">
+        <div className="max-w-[78rem]  lg:max-w-7xl mx-auto  py-16 bg-white">
+          <div className="bg-[#0077B3] px-20 max-w-5xl lg:max-w-7xl mx-auto py-12 items-center flex lg:flex-col justify-between">
+            <div className="text-2xl lg:text-lg font-semibold text-white">
               <p>Do you also want to change your world?</p>
             </div>
             <div className="justify-center bg-white text-black">
-              <p className="text-2xl font-semibold px-7 py-3 text-[#333333]">Visit the VU Master's Event</p>
+              <p className="text-2xl font-semibold px-7 py-3 lg:text-lg text-[#333333]">Visit the VU Master's Event</p>
             </div>
           </div>
         </div>
       </section>
       {/* impact */}
       <section className="px-5">
-        <div className="max-w-[78rem] mx-auto py-10 pt-20 bg-[#f2efed]">
-          <h1 className="text-4xl px-32 text-[#cc4100]">Impact</h1>
+        <div className="max-w-[78rem] mx-auto py-10 pt-16 bg-[#FAF7F5]">
+          <h1 className="text-4xl font-medium px-32 text-[#cc4100]">Impact</h1>
         </div>
       </section>
 
       {/* second background */}
-      <section className="">
+      <section className="relative">
         <div className="max-w-[78rem]  mx-auto py-72" style={{
           backgroundImage: `url("https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/883cc0a7-cdf9-41aa-b410-2bce37f7a554/001_VU_com_Davide-Ianuzzi_PeGe_2022_PG006556_lowres%5B28%5D.jpg?w=1250&h=600&fit=clip&rect=336%2C153%2C1664%2C799&fm=jpg&auto=format&dpr=1")`,
           backgroundColor: '#cccccc', /* Used if the image is unavailable */
@@ -125,21 +141,52 @@ export default function Home() {
         }}>
 
         </div>
-      </section>
-      {/* card that will trigger first coursel on an old man */}
-      <section className="px-5">
-        <div className="max-w-[78rem] mx-auto px-20 bg-[#f2efed] py-20 flex justify-between">
+        <div className="max-w-sm mx-auto px-20 bg-[#f2efed] py-16 flex justify-between">
+        <div className="items-center justify-center md:flex absolute right-[26rem] bottom-16">
+            <div className="p-4 px-10 py-10 space-y-6 bg-white md:-mt-24 ">
+              <h5 className="text-[24px] leading-[36px] font-light text-orange-900">
+                Science to impact
+              </h5>
+              <p className="text-lg leading-[30px] max-w-lg">
+                An interview with entrepreneurial scientist Davide Iannuzzi,
+                Chief Impact Officer of Vrije Universiteit Amsterdam
+              </p>
+              <Link
+                href="#"
+                className="flex items-center h-full gap-4 bg-white"
+              >
+                <span className="text-base font-bold">Read more</span>
+               
+              </Link>
+              <div className="flex items-center justify-end gap-4 mt-6">
+                <div className="flex items-center">
+                  <RxDotFilled className="text-6xl text-orange-900" />
+                  <RxDotFilled className="text-4xl text-orange-300" />
+                  <RxDotFilled className="text-4xl text-orange-300" />
+                  <RxDotFilled className="text-4xl text-orange-300" />
+                </div>
+                <div className="flex items-center gap-4 p-4 bg-[#fcd3b6]">
+                  <MdOutlineArrowBackIosNew />
+                  <MdArrowForwardIos />
+                </div>
+              </div>
+            </div>
+          </div>
 
         </div>
       </section>
-      {/* Ukraine section */}
+      {/* card that will trigger first coursel on an old man */}
       <section className="px-5">
-        <div className="max-w-[78rem] mx-auto px-24 gap-10 bg-white py-20 grid grid-cols-2">
+        
+      </section>
+      {/* Ukraine section */}
+      <section className="px-5 lg:px-0">
+        <div className="max-w-[78rem] lg:max-w-full lg:px-2 mx-auto px-28 gap-10 bg-white py-20 grid lg:grid-cols-1 grid-cols-2">
           {[1, 2].map((value, idx) => {
             return (
-              <div className="bg-white p-10 shade">
-                <h1 className="text-2xl">Ukraine</h1>
-                <div className="mt-6">
+              <div className="bg-white pt-10 px-6 pb-20 shade">
+                <h1 className={`font-medium text-2xl ${idx === 0?"text-[#008058]":"text-black"}`}>Ukraine</h1>
+                <div className="mt-4">
                   <p>Information and support</p>
                 </div>
               </div>
@@ -151,34 +198,34 @@ export default function Home() {
       <section className="px-5">
         {/* impact */}
         <div className="max-w-[78rem] mx-auto py-10 bg-[#FAF7F5]">
-          <h1 className="text-3xl px-32 text-red-500">News</h1>
+          <h1 className="text-4xl px-32 text-[#3B218F]">News</h1>
         </div>
         <div className="max-w-[78rem] mx-auto px-20 bg-[#FAF7F5] grid pb-20">
-          <div className="flex justify-between gap-10">
+          <div className="flex  lg:flex-col justify-between gap-10">
             <div className="">
               {[1, 2].map((value, idx) => {
                 return (
-                  <div className="grid grid-cols-7 gap-7 mt-10">
+                  <div className="grid lg:hidden  grid-cols-7 gap-7 lg:mt-5 mt-10">
                     <div className="col-span-4">
                       <img src="https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/620eb879-353a-48fc-88d7-ee3c1324aec8/VUvlag.png" className="aspect-video h-52" alt="" />
                     </div>
                     <div className="col-span-3">
                       <h1>08 Feb 2023</h1>
-                      <h1 className="text-xl tracking-wide max-w-3xl">Earthquakes Turkey and
+                      <h1 className="text-2xl mt-4 tracking-wide max-w-[16rem]">Earthquakes Turkey and
                         Syria</h1>
                     </div>
                   </div>
                 )
               })}
             </div>
-            <div className="space-y-20 flex-1">
+            <div className="space-y-20 flex-1 ">
               {[1, 2, 3].map((value, idx) => {
                 return (
                   <div className="flex gap-3 mt-10">
                     <img src="https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/620eb879-353a-48fc-88d7-ee3c1324aec8/VUvlag.png" className="aspect-video w-32 h-24 object-cover aspect-video " alt="" />
                     <div className="">
                       <h1>08 Feb 2023</h1>
-                      <h1 className="text-sm tracking-wide max-w-3xl">Earthquakes Turkey and
+                      <h1 className="tracking-wide max-w-[10rem] text-lg mt-2">Earthquakes Turkey and
                         Syria</h1>
                     </div>
                   </div>
@@ -188,7 +235,7 @@ export default function Home() {
           </div>
         </div>
         <div className="max-w-[78rem] grid mx-auto py-10 bg-[#FAF7F5]">
-          <h1 className="text-3xl m-auto px-32 text-red-500">News</h1>
+          <h1 className="text-2xl m-auto px-32 ">News overview</h1>
         </div>
       </section>
 
@@ -200,7 +247,7 @@ export default function Home() {
               <h1>Calender</h1>
             </div>
             <div className="flex gap-6">
-              <div className="py-2 px-3 border border-gray-500 w-64">
+              <div className="py-2 px-3 border font-bold text-lg border-gray-500 w-64">
                 All categories
               </div>
               <div className="py-2 px-3 border border-gray-500 w-64">
@@ -213,16 +260,16 @@ export default function Home() {
           <div className="grid grid-cols-4 items-center gap-6 py-16">
             {[
               {
-                item:"PhD Defences"
+                item: "PhD Defences"
               },
               {
                 item: "Social events"
               },
               {
-                item:"Other events"
+                item: "Other events"
               },
               {
-                item:"Lectures"
+                item: "Lectures"
               }
             ].map((val, index) => {
               return (
@@ -285,9 +332,9 @@ export default function Home() {
       </section>
 
       <section className="px-5">
-        <div className="max-w-[78rem] px-32 bg-white py-16 mx-auto">
+        <div className="max-w-[78rem] lg:max-w-full lg:px-2 px-32 bg-white py-16 mx-auto">
           {/* next this in this section */}
-          <div className="grid grid-cols-3 gap-6 ">
+          <div className="grid lg:grid-cols-1 grid-cols-3 gap-6 ">
             {data3.map((val, index) => {
               return (
                 <div className="">
@@ -325,11 +372,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* last section footer */}
       <section className="px-5">
-        <div className="max-w-[78rem] py-4 space-y-6 px-32 bg-[#0077b3] text-white mx-auto">
-          <div className="flex gap-5 ">
+        <div className="max-w-[78rem] py-4  space-y-6 px-32 bg-[#0077b3] text-white mx-auto">
+          <div className="flex lg:grid lg:grid-cols-2 gap-5 ">
             {["Privacy Statement", "Disclaimer", "Safety at VU Amsterdam", "Colofon", "Cookie Settings", "Web archive"].map((val, index) => {
               return (
                 <div className="mt-4 flex gap-1 items-center">
