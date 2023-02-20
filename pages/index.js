@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
-import { data2, data3 } from "@/data"; 
+import { data2, data3 } from "@/data";
 import Link from "next/link";
-import { MdArrowForwardIos, MdOutlineArrowBackIosNew,AiOutlineArrowRight } from "react-icons/md";
+import { MdArrowForwardIos, MdOutlineArrowBackIosNew, AiOutlineArrowRight } from "react-icons/md";
 import { RxDotFilled } from "react-icons/rx";
 
 export default function Home() {
@@ -142,7 +142,7 @@ export default function Home() {
 
         </div>
         <div className="max-w-sm mx-auto px-20 bg-[#f2efed] py-16 flex justify-between">
-        <div className="items-center justify-center md:flex absolute right-[26rem] bottom-16">
+          <div className="items-center justify-center md:flex absolute right-[26rem] bottom-16">
             <div className="p-4 px-10 py-10 space-y-6 bg-white md:-mt-24 ">
               <h5 className="text-[24px] leading-[36px] font-light text-orange-900">
                 Science to impact
@@ -156,7 +156,7 @@ export default function Home() {
                 className="flex items-center h-full gap-4 bg-white"
               >
                 <span className="text-base font-bold">Read more</span>
-               
+
               </Link>
               <div className="flex items-center justify-end gap-4 mt-6">
                 <div className="flex items-center">
@@ -177,7 +177,7 @@ export default function Home() {
       </section>
       {/* card that will trigger first coursel on an old man */}
       <section className="px-5">
-        
+
       </section>
       {/* Ukraine section */}
       <section className="px-5 lg:px-0">
@@ -185,7 +185,7 @@ export default function Home() {
           {[1, 2].map((value, idx) => {
             return (
               <div className="bg-white pt-10 px-6 pb-20 shade">
-                <h1 className={`font-medium text-2xl ${idx === 0?"text-[#008058]":"text-black"}`}>Ukraine</h1>
+                <h1 className={`font-medium text-2xl ${idx === 0 ? "text-[#008058]" : "text-black"}`}>Ukraine</h1>
                 <div className="mt-4">
                   <p>Information and support</p>
                 </div>
@@ -242,22 +242,22 @@ export default function Home() {
       {/* next section */}
       <section className="px-5">
         <div className="max-w-[78rem] px-32 bg-white mx-auto">
-          <div className="grid grid-cols-2 items-center py-16">
+          <div className="grid grid-cols-2 items-center pt-16 pb-3">
             <div>
-              <h1>Calender</h1>
+              <h1 className="text-4xl font-semiboldbold text-[#0077B3] ">Calender</h1>
             </div>
             <div className="flex gap-6">
-              <div className="py-2 px-3 border font-bold text-lg border-gray-500 w-64">
+              <div className="py-2 px-3 shade font-bold  text-lg  w-64">
                 All categories
               </div>
-              <div className="py-2 px-3 border border-gray-500 w-64">
+              <div className="py-2  font-bold  px-3 shade border-gray-500 w-64">
                 Date
               </div>
             </div>
           </div>
 
           {/* next this in this section */}
-          <div className="grid grid-cols-4 items-center gap-6 py-16">
+          <div className="grid grid-cols-4 text-xl  items-center gap-6 pt-10">
             {[
               {
                 item: "PhD Defences"
@@ -274,12 +274,12 @@ export default function Home() {
             ].map((val, index) => {
               return (
                 <div>
-                  <h1>Other events</h1>
-                  <div className="mt-4">
-                    {[1, 2].map((e, idx) => {
+                  <h1 className="underline" >Other events</h1>
+                  <div className="mt-2">
+                    {[1, 2, 3].map((e, idx) => {
                       return (
-                        <div>
-                          <h1>21 February 2023</h1>
+                        <div className="mt-1">
+                          <h1>ABRI Writing Boost</h1>
                         </div>
                       )
                     })}
