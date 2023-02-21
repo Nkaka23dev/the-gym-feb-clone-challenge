@@ -1,8 +1,12 @@
 import Navbar from "@/components/Navbar";
 import { data2, data3 } from "@/data";
 import Link from "next/link";
-import { MdArrowForwardIos, MdOutlineArrowBackIosNew, AiOutlineArrowRight } from "react-icons/md";
+import { MdArrowForwardIos, MdOutlineArrowBackIosNew } from "react-icons/md";
 import { RxDotFilled } from "react-icons/rx";
+
+import localFont from '@next/font/local'
+
+const robo = localFont({ src: '../public/roboto-latin-400-normal.woff2', display: 'swap' })
 
 export default function Home() {
   return (
@@ -74,7 +78,7 @@ export default function Home() {
             return (
               <div key={index} className="flex lg:flex-col  space-x-4 items-center justify-between">
                 <img className="w-10 md:w-7" src={val.img} alt="" />
-                <p className="text-md lg:text-sm font-bold tracking-wider">31.704 students</p>
+                <p className={`only:text-md lg:text-sm tracking-wider font-semibold ${robo.className}`}>31.704 students</p>
               </div>
             )
           })}
@@ -91,13 +95,13 @@ export default function Home() {
                     {data2[0]}
                   </div>
                 </div>
-                <div className="mt-6">
+                <div className="mt-[1.50rem]">
                   {["Bachelor's programmes", "Master's programmes", "Honours programme", "Education for professionals", "Study guide"].map((v, i) => {
                     return (
                       <div className="mt-[0.15rem] flex justify-between items-center" key={i}>
                         <p style={{
                           fontWeight: '500'
-                        }} className="text-lg">{v}</p>
+                        }} className={`${robo.className} opacity-90 text-lg`}>{v}</p>
                         <svg className="fill-[#0077B3]" xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 24 24" fill="#000000">
                           <path d="M20 12L4 12M20 12L14 18M20 12L14 6" stroke="#000000" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
@@ -244,42 +248,53 @@ export default function Home() {
         <div className="max-w-[78rem] px-32 bg-white mx-auto">
           <div className="grid grid-cols-2 items-center pt-16 pb-3">
             <div>
-              <h1 className="text-4xl font-semiboldbold text-[#0077B3] ">Calender</h1>
+              <h1 className={`text-4xl  text-[#0077B3]`}>Calendar</h1>
             </div>
-            <div className="flex lg:flex-col gap-6">
-              <div className="py-2 px-3 shade font-bold  text-lg  w-64">
+            <div className={`flex lg:flex-col gap-6 ${robo.className}`}>
+              <div className={`opacity-80 font-semibold py-2 items-center px-3 shade flex justify-between  text-lg  w-64`}>
                 All categories
+                <svg className="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="40" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9" /></svg>
               </div>
-              <div className="py-2  font-bold  px-3 shade border-gray-500 w-64">
+              <div className="py-2 flex justify-between items-center opacity-80 font-semibold text-lg  px-3 shade border-gray-500 w-64">
                 Date
+                <svg className="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="40" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9" /></svg>
               </div>
             </div>
           </div>
 
           {/* next this in this section */}
-          <div className="grid lg:grid-cols-1 grid-cols-4 text-xl  items-center gap-6 pt-10">
+          <div className="grid lg:grid-cols-1 grid-cols-4 text-xl  border-b-2 border-[#0077b3] pb-20 items-center gap-6 pt-10">
             {[
               {
-                item: "PhD Defences"
+                item: "Other events",
+                deck: "21 February 2023",
+                v: "Board game night - Life is Better in 3D"
               },
               {
-                item: "Social events"
+                item: "Lectures",
+                deck: "21 February 2023",
+                v: "Board game night - Life is better "
               },
               {
-                item: "Other events"
+                item: "Social events",
+                deck: "21 February 2023",
+                v: "Board game night - Life is better  "
               },
               {
-                item: "Lectures"
+                item: "Other events",
+                deck: "21 February 2023",
+                v: "Board game night - Life is Better in 3D"
               }
             ].map((val, index) => {
               return (
                 <div>
-                  <h1 className="underline" >Other events</h1>
-                  <div className="mt-2">
-                    {[1, 2, 3].map((e, idx) => {
+                  <h1 className="underline text-[1.15rem] " >{val.item}</h1>
+                  <h1 className={` ${robo.className} mt-3 text-[1.15rem] font-semibold text-[#0077b3]`}>{val.deck}</h1>
+                  <div className="mt-4">
+                    {[1].map((e, idx) => {
                       return (
                         <div className="mt-1">
-                          <h1>ABRI Writing Boost</h1>
+                          <h1 className="text-2xl">{val.v}</h1>
                         </div>
                       )
                     })}
@@ -288,12 +303,24 @@ export default function Home() {
               )
             })}
           </div>
+          <div className="flex justify-between items-center pb-16">
+            <div className="flex gap-4">
+              <h1 className={`${robo.className} text-xl font-normal`}>View calendar</h1>
+              <svg Name="fill-[#000000]" xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24" fill="#000000">
+                <path d="M20 12L4 12M20 12L14 18M20 12L14 6" stroke="#000000" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div className="ml-auto px-1 cursor-pointer  flex gap-4 bg-[#FCD3B6]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6" /></svg>
+            </div>
+          </div>
         </div>
       </section>
       {/* nextsection to calender */}
 
       <section className="px-5 lg:px-4">
-        <div className="max-w-[78rem] lg:max-w-7xl mx-auto lg:py-0  py-16 bg-white">
+        <div className="max-w-[78rem] bg-[#FAF7F5] lg:max-w-7xl mx-auto lg:py-0  py-16">
           <div className="bg-[#0077B3] px-20 lg:px-6 max-w-5xl lg:max-w-7xl mx-auto lg:pt-8 py-12 items-center flex lg:flex-col justify-between">
             <div className="text-2xl lg:text-[1.3rem] lg:text-center lg:max-w-[18rem] font-semibold text-white">
               <p>Working at VU Amsterdam?</p>
@@ -306,28 +333,49 @@ export default function Home() {
       </section>
       {/* We are VU Amsterdam */}
       <section className="block lg:hidden">
-        <div className="max-w-[78rem] mx-auto overflow-hidden py-20 bg-white">
-          <div className="flex lg:hidden -ml-40">
+        <div className="max-w-[78rem] mx-auto overflow-hidden bg-white pb-12 grid">
+          <div className="max-w-[78rem] mr-auto lg:mr-auto lg:py-0">
+            <h1 className={`text-4xl lg:px-0 px-36 text-[#CC4100] pb-10 pt-20`}>We are VU Amsterdam</h1>
+          </div>
+          <div className="flex lg:hidden -ml-56">
             {[1, 2, 3, 4, 5].map((val, idx) => {
               return (
-                <div className="max-w-[23%] px-8  basis-[23%] flex-grow-0 flex-shrink-0 ">
+                <div className="max-w-[23%] px-8 duration-300  cursor-pointer hover:shadow-xl basis-[23%] flex-grow-0 flex-shrink-0 ">
                   <img src="https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/af80e288-3224-4918-a78c-14c99e741d32/Gustaaf-Peek_Foto_Maya-Hermes_2134x1600.jpg?fm=jpg&auto=format&dpr=1" alt="" />
+                  <div className="grid space-y-4 mt-8">
+                    <h1 className="text-2xl text-[#CC4100] ">Vrije Schrijver (Writer in
+                      Residence)</h1>
+                    <p className={`${robo.className} text-[1.20rem]`}>Read more</p>
+                    <div className="ml-auto  py-5 ">
+                      <svg Name="fill-[#000000]" xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24" fill="#000000">
+                        <path d="M20 12L4 12M20 12L14 18M20 12L14 6" stroke="#000000" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               )
             })}
+          </div>
+          <div className="ml-auto py-2 px-1 mt-10 cursor-pointer  flex gap-4 bg-[#FCD3B6]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6" /></svg>
           </div>
         </div>
       </section>
       {/* Ukraine section */}
       <section className="px-5 lg:hidden">
-        <div className="max-w-[78rem] mx-auto lg:px-0 px-32 lg:gap-0 gap-10 bg-[#FAF7F5] lg:py-0 py-20 grid grid-cols-2 lg:flex">
-          {[1].map((value, idx) => {
-            return (
-              <div className="bg-white lg:max-w-2xl pt-8 px-4 pb-44 lg:pb-28 shade max-w-xs">
-                <h1 className="text-2xl">VIJ Campus Tour</h1>
-              </div>
-            )
-          })}
+        <div className="max-w-[78rem] mx-auto lg:mr-auto lg:py-0 bg-[#FAF7F5]">
+          <h1 className={`text-4xl lg:px-0 px-32 text-[#008053]  pb-10 pt-20`}>Take a look</h1>
+        </div>
+        <div className="max-w-[78rem] mx-auto lg:px-0 px-32 lg:gap-0 gap-10 bg-[#FAF7F5] lg:py-0 pb-20 grid grid-cols-2 lg:flex">
+          <div className="bg-white lg:max-w-2xl pt-8 px-7 space-y-28 lg:pb-28 grid shade max-w-xs">
+            <h1 className="text-[1.5rem] text-[#008053] ">VIJ Campus Tour</h1>
+            <div className="ml-auto py-8">
+              <svg className="fill-[#0077B3]" xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 24 24" fill="#000000">
+                <path d="M20 12L4 12M20 12L14 18M20 12L14 6" stroke="#000000" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
         </div>
       </section>
       {/* Ukraine section  mobile*/}
@@ -347,14 +395,14 @@ export default function Home() {
               return (
                 <div className="">
                   <div>
-                    <h1 className={`text-[2.30rem] lg:font-normal lg:px-6 lg:text-[1.5rem] ${index === 1 ? "text-[#CC4100]" : index === 0 ? "text-[#0077B3]" : "text-[#008053]"}`}>{val.item}</h1>
+                    <h1 className={`text-[2.30rem]  lg:px-6 lg:text-[1.5rem] ${index === 1 ? "text-[#CC4100]" : index === 0 ? "text-[#0077B3]" : "text-[#008053]"}`}>{val.item}</h1>
                   </div>
-                  <div className=" h-[80%] flex flex-col justify-between relative">
-                    <div className="shade flex justify-beteen h-full flex-col px-7 py-5 lg:pb-16 ">
+                  <div className=" h-[80%]  flex flex-col justify-between relative">
+                    <div className="shade flex justify-beteen h-full flex-col px-7 pb-10 py-5 lg:pb-16 ">
                       {val.desc.map((v, i) => {
                         return (
                           <div className="flex justify-between items-center">
-                            <div className="mt-[0.35rem] text-lg font-normal ">
+                            <div className={` ${robo.className} mt-[0.35rem] text-lg `}>
                               {v}
                             </div>
                             <svg Name="fill-[#000000]" xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24" fill="#000000">
@@ -392,13 +440,13 @@ export default function Home() {
         </div>
       </section>
       {/* last section footer */}
-      <section className="px-5 lg:px-0 lg:font-extrabold">
+      <section className={`${robo.className} px-5 lg:px-0 `}>
         <div className="max-w-[78rem] py-4 lg:space-y-0 space-y-6 lg:px-6 px-32 bg-[#0077b3] text-white mx-auto">
           <div className="flex lg:grid lg:grid-cols-2 gap-5 lg:gap-0">
             {["Privacy Statement", "Disclaimer", "Safety at VU Amsterdam", "Colofon", "Cookie Settings", "Web archive"].map((val, index) => {
               return (
                 <div className="mt-4 lg:mt-2 flex gap-1 items-center">
-                  <h1 className="text-md font-medium tracking-wide whitespace-nowrap ">{val}</h1>
+                  <h1 className="text-md  tracking-wide whitespace-nowrap ">{val}</h1>
                   <svg Name="fill-[#000000]" xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24" fill="#000000">
                     <path d="M20 12L4 12M20 12L14 18M20 12L14 6" stroke="white" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
@@ -406,7 +454,7 @@ export default function Home() {
               )
             })}
           </div>
-          <div className="font-medium lg:pb-4 lg:pt-5">
+          <div className="lg:pb-4 lg:pt-5">
             <h1 className="lg:max-w-xs">Copyright &copy;
               2023 - Vrije Universiteit Amsterdam</h1>
           </div>
