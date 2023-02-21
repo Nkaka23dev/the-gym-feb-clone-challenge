@@ -13,15 +13,15 @@ export default function Home() {
     <>
       <Navbar />
       <section className="px-5 lg:px-0 mt-20 lg:mt-16 lg:max-w-[98rem]">
-        <div className="max-w-[78rem] shade  bg-[#FDFDFD] mx-auto grid lg:pb-[4rem] pb-[6rem] pt-7">
-          <p className="m-auto lg:px-6 px-3 lg:text-[2rem] text-[2.8rem] lg:max-w-full  max-w-[52rem] font-light text-[#333333] lg:leading-8">You don’t just become something, you become someone</p>
+        <div className="max-w-[78rem]   bg-white mx-auto grid lg:pb-[4rem] pb-[6rem] pt-7">
+          <p className="m-auto lg:pb-7 lg:px-6 px-3 lg:text-[2rem] text-[2.8rem] lg:max-w-full  max-w-[52rem] font-light text-[#333333] leading-[3.5rem] pb-9 lg:leading-10">You don’t just become something, you become someone</p>
         </div>
       </section>
-      <section className="px-5 lg:px-0  -mt-10 relative z-10">
+      <section className="px-5 lg:px-0 -mt-16 relative z-10">
         <div className="max-w-[61rem] mx-auto lg:grid-cols-1 grid grid-cols-5 items-center ">
-          <div className="py-7 relative lg:px-4 px-10 col-span-3 flex justify-between bg-[#0077B3]">
+          <div className="py-8 relative lg:px-4 px-10 col-span-3 flex justify-between bg-[#0077B3]">
             <input type="text" placeholder="Search..." className="w-full bg-[#0077B3] placeholder-white font-light text-white text-[1.35rem] lg:text-[1.1rem] caret-violet-50 border-b border-white focus:outline-none" />
-            <svg className=" text-white absolute lg:right-2 lg:top-7 right-10 top-8"
+            <svg className=" text-white absolute lg:right-2 lg:top-7 right-10 top-[2.3rem]"
               xmlns="http://www.w3.org/2000/svg"
               width="25"
               height="25"
@@ -37,7 +37,7 @@ export default function Home() {
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
           </div>
-          <div className="bg-white shade col-span-2 py-7 px-5 lg:px-4 items-center flex justify-between">
+          <div className="bg-white shade2 col-span-2 py-8 px-5 lg:px-4 items-center flex justify-between">
             <div>
               <p className="text-[1.35rem] lg:text-[1.2rem]  text-[#0077B3]">About VIJ Amsterdam</p>
             </div>
@@ -154,7 +154,8 @@ export default function Home() {
           backgroundRepeat: 'no-repeat', /* Do not repeat the image */
           backgroundSize: 'cover' /* Resize the background image to cover the entire container */
         }}>
-          <div className="items-center lg:bottom-0 lg:right-0 impact justify-center lg:flex absolute right-[16.4rem] -bottom-24">
+          <div className="items-center lg:bottom-0 lg:right-0 impact justify-center lg:flex absolute right-[19.4rem] -bottom-24">
+            <div className="bg-gray-300 absolute top-6 w-full h-[0.4px]"></div>
             <div className="pt-16 pl-16  space-y-6 bg-white grid lg:-mt-24 ">
               <h5 className="text-[24px]  leading-[36px] font-light text-[#CC4100]">
                 Science to impact
@@ -364,15 +365,15 @@ export default function Home() {
         </div>
       </section>
       {/* We are VU Amsterdam */}
-      <section className="block lg:hidden">
+      <section className="block ">
         <div className="max-w-[78rem] mx-auto overflow-hidden bg-white pb-12 grid">
           <div className="max-w-[78rem] mr-auto lg:mr-auto lg:py-0">
             <h1 className={`text-4xl lg:px-0 px-36 text-[#CC4100] pb-10 pt-20`}>We are VU Amsterdam</h1>
           </div>
-          <div className="flex lg:hidden -ml-56 pb-32">
+          <div className="flex -ml-56 lg:ml-0 pb-32">
             {["https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/ee314579-ae99-4e24-a166-e4275b7b26d7/MH_G3A6804_Spinozaprijs_Hero_2200x720_3.png?w=397&h=595&fit=clip&rect=673%2C125%2C397%2C595&fm=jpg&auto=format&dpr=1", "https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/af80e288-3224-4918-a78c-14c99e741d32/Gustaaf-Peek_Foto_Maya-Hermes_2134x1600.jpg?fm=jpg&auto=format&dpr=1", "https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/c4f807f9-18b8-4d8a-ab3d-006f345289fb/DreamTeams_webbanner_1600x750_tcm289-955609.jpg?fm=jpg&auto=format&dpr=1", "https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/9e00b0fc-d631-4c75-ae17-df91cdf62d93/Peter%20Valckx_IMG_7957_Frank_van_Harmelen_MA_AI_Verander.jpg?w=397&h=595&fit=clip&rect=2558%2C0%2C2562%2C3840&fm=jpg&auto=format&dpr=1", "https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/ee314579-ae99-4e24-a166-e4275b7b26d7/MH_G3A6804_Spinozaprijs_Hero_2200x720_3.png?w=397&h=595&fit=clip&rect=673%2C125%2C397%2C595&fm=jpg&auto=format&dpr=1"].map((val, idx) => {
               return (
-                <div className="max-w-[23%] px-8 duration-300 h-full cursor-pointer basis-[23%] flex-grow-0 flex-shrink-0 ">
+                <div className="max-w-[23%] lg:max-w-[35%] lg:basis-[35%] lg:px-3 px-8 duration-300 h-full cursor-pointer basis-[23%] flex-grow-0 flex-shrink-0">
                   <img className="object-cover object-center aspect-video w-full h-full" src={val} alt="" />
                   <div className="grid space-y-4 mt-8">
                     <h1 className="text-2xl text-[#CC4100] ">Vrije Schrijver (Writer in

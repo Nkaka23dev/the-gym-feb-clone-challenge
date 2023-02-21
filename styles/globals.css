@@ -9,9 +9,12 @@ body{
   box-shadow: 0 0 60px 0 rgb(0 0 0 / 10%);
 }
 .shade2 {
-  box-shadow: 0 0 120px 0 rgb(0 0 0 / 7%);
+  box-shadow: 0 0 120px 0 rgb(0 0 0 / 16%);
 }
-.impact{   -webkit-clip-path: polygon(16% 0, 100% 0%, 100% 57%, 0 57%, 0 0, 10% 0, 14% 5%); clip-path: polygon(17% 0, 100% 0%, 100% 100%, 0 100%, 0 0, 11.2% 0, 14.1% 7%); }
+.shade3{
+  box-shadow: 0 0 120px 0 rgb(0 0 0 / 6%);
+}
+.impact{  -webkit-clip-path: polygon(16% 0, 100% 0%, 100% 57%, 0 57%, 0 0, 10% 0, 14% 5%); clip-path: polygon(17% 0, 100% 0%, 100% 100%, 0 100%, 0 0, 11.2% 0, 14.1% 7%); }
 
 
 

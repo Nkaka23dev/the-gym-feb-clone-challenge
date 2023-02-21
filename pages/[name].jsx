@@ -8,8 +8,8 @@ export default function Page() {
     
   return (
     <div className='h-screen grid'>
-       <div className='m-auto'>
-       <h4 className='text-3xl mb-6 max-w-md font-bold'><span className='capitalize font-bold text-[#333333]'>{name}</span> Page</h4>
+       <div className='m-auto lg:px-8'>
+       <h4 className='text-3xl mb-6 lg:text-lg max-w-md font-bold'><span className='capitalize font-bold text-[#333333]'>{name}</span> Page</h4>
         <Link href="/" className='underline text-blue-500 text-xl'>Back Home</Link>
        </div>
     </div>
