@@ -8,16 +8,16 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <section className="px-5 lg:px-0 mt-20 lg:max-w-[98rem]">
-        <div className="max-w-[78rem] shade  bg-[#FDFDFD] mx-auto grid pb-[6rem] pt-7">
-          <p className="m-auto px-3 lg:text-[1.6rem] text-[2.8rem] lg:max-w-full  max-w-[52rem] font-light text-[#333333]">You don’t just become something, you become someone</p>
+      <section className="px-5 lg:px-0 mt-20 lg:mt-16 lg:max-w-[98rem]">
+        <div className="max-w-[78rem] shade  bg-[#FDFDFD] mx-auto grid lg:pb-[4rem] pb-[6rem] pt-7">
+          <p className="m-auto lg:px-6 px-3 lg:text-[2rem] text-[2.8rem] lg:max-w-full  max-w-[52rem] font-light text-[#333333] lg:leading-10">You don’t just become something, you become someone</p>
         </div>
       </section>
       <section className="px-5 lg:px-0  -mt-10 relative z-10">
         <div className="max-w-[61rem] mx-auto lg:grid-cols-1 grid grid-cols-5 items-center ">
-          <div className="py-7 relative px-10 col-span-3 flex justify-between bg-[#0077B3]">
-            <input type="text" placeholder="Search..." className="w-full bg-[#0077B3] placeholder-white font-light text-white text-[1.35rem] caret-violet-50 border-b border-white focus:outline-none" />
-            <svg className=" text-white absolute right-10 top-8"
+          <div className="py-7 relative lg:px-4 px-10 col-span-3 flex justify-between bg-[#0077B3]">
+            <input type="text" placeholder="Search..." className="w-full bg-[#0077B3] placeholder-white font-light text-white text-[1.35rem] lg:text-[1.1rem] caret-violet-50 border-b border-white focus:outline-none" />
+            <svg className=" text-white absolute lg:right-2 lg:top-7 right-10 top-8"
               xmlns="http://www.w3.org/2000/svg"
               width="25"
               height="25"
@@ -33,9 +33,9 @@ export default function Home() {
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
           </div>
-          <div className="bg-white shade col-span-2 py-7 px-5 lg:px-0 items-center flex justify-between">
+          <div className="bg-white shade col-span-2 py-7 px-5 lg:px-4 items-center flex justify-between">
             <div>
-              <p className="text-[1.35rem]  text-[#0077B3]">About VIJ Amsterdam</p>
+              <p className="text-[1.35rem] lg:text-[1.2rem]  text-[#0077B3]">About VIJ Amsterdam</p>
             </div>
             <svg className="fill-[#0077B3]" xmlns="http://www.w3.org/2000/svg" width="26px" height="28px" viewBox="0 0 24 24" fill="#0077B3">
               <path d="M20 12L4 12M20 12L14 18M20 12L14 6" stroke="#0077B3" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
@@ -56,8 +56,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 lg:px-0 -mt-10">
-        <div className="max-w-[78rem] mx-auto px-16 bg-white pb-40 pt-10 flex  justify-around items-center">
+      <section className="px-5 lg:px-0 -mt-10 lg:-mt-0 lg:pb-16">
+        <div className="max-w-[78rem] mx-auto lg:px-0 lg:pt-2 px-16 bg-white lg:pb-7 pb-40 pt-10 flex  justify-around items-center">
           {[{
             text: "31.704 students",
             img: "./hat.png"
@@ -72,14 +72,14 @@ export default function Home() {
             img: "./tt.png"
           },].map((val, index) => {
             return (
-              <div key={index} className="flex space-x-4 items-center justify-between">
-                <img className="w-10" src={val.img} alt="" />
-                <p className="text-md font-bold tracking-wider">31.704 students</p>
+              <div key={index} className="flex lg:flex-col  space-x-4 items-center justify-between">
+                <img className="w-10 md:w-7" src={val.img} alt="" />
+                <p className="text-md lg:text-sm font-bold tracking-wider">31.704 students</p>
               </div>
             )
           })}
         </div>
-        <div className="max-w-[78rem] mx-auto lg:px-0 px-32 gap-5 bg-[#FAF7F5] py-20 lg:grid-cols-1 grid grid-cols-2">
+        <div className="max-w-[78rem] mx-auto lg:px-3 px-32 gap-5 bg-[#FAF7F5] lg:py-0 py-20 lg:grid-cols-1 grid grid-cols-2">
           {["Education", "Research"].map((value, idx) => {
             return (
               <div className="bg-white py-10 px-7 lg:-mt-0 -mt-44 shade">
@@ -111,14 +111,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5">
-        <div className="max-w-[78rem]  lg:max-w-7xl mx-auto  py-16 bg-white">
-          <div className="bg-[#0077B3] px-20 max-w-5xl lg:max-w-7xl mx-auto py-12 items-center flex lg:flex-col justify-between">
-            <div className="text-2xl lg:text-lg font-semibold text-white">
+      <section className="px-5 lg:px-4">
+        <div className="max-w-[78rem] lg:max-w-7xl mx-auto lg:py-0  py-16 bg-white">
+          <div className="bg-[#0077B3] px-20 lg:px-6 max-w-5xl lg:max-w-7xl mx-auto lg:pt-8 py-12 items-center flex lg:flex-col justify-between">
+            <div className="text-2xl lg:text-[1.3rem] lg:text-center lg:max-w-[18rem] font-semibold text-white">
               <p>Do you also want to change your world?</p>
             </div>
-            <div className="justify-center bg-white text-black">
-              <p className="text-2xl font-semibold px-7 py-3 lg:text-lg text-[#333333]">Visit the VU Master's Event</p>
+            <div className="justify-center bg-white text-black lg:mt-10">
+              <p className="text-2xl  font-semibold px-7 py-3 lg:max-w-xs lg:text-center  text-[#333333]">Visit the VU Master's Event</p>
             </div>
           </div>
         </div>
@@ -142,8 +142,8 @@ export default function Home() {
 
         </div>
         <div className="max-w-sm mx-auto px-20 bg-[#f2efed] py-16 flex justify-between">
-          <div className="items-center justify-center md:flex absolute right-[26rem] bottom-16">
-            <div className="p-4 px-10 py-10 space-y-6 bg-white md:-mt-24 ">
+          <div className="items-center justify-center lg:flex absolute right-[26rem] bottom-16">
+            <div className="p-4 px-10 py-10 space-y-6 bg-white lg:-mt-24 ">
               <h5 className="text-[24px] leading-[36px] font-light text-orange-900">
                 Science to impact
               </h5>
@@ -195,13 +195,13 @@ export default function Home() {
         </div>
       </section>
       {/* next section */}
-      <section className="px-5">
+      <section className="px-5 lg:px-0">
         {/* impact */}
-        <div className="max-w-[78rem] mx-auto py-10 bg-[#FAF7F5]">
-          <h1 className="text-4xl px-32 text-[#3B218F]">News</h1>
+        <div className="max-w-[78rem] mx-auto lg:mr-auto lg:py-0 py-10 bg-[#FAF7F5]">
+          <h1 className="text-4xl lg:px-0 px-32 text-[#3B218F]">News</h1>
         </div>
-        <div className="max-w-[78rem] mx-auto px-20 bg-[#FAF7F5] grid pb-20">
-          <div className="flex  lg:flex-col justify-between gap-10">
+        <div className="max-w-[78rem] mx-auto lg:px-0 px-20 bg-[#FAF7F5] grid lg:pb-0 pb-20">
+          <div className="flex lg:flex-col justify-between gap-10">
             <div className="">
               {[1, 2].map((value, idx) => {
                 return (
@@ -235,18 +235,18 @@ export default function Home() {
           </div>
         </div>
         <div className="max-w-[78rem] grid mx-auto py-10 bg-[#FAF7F5]">
-          <h1 className="text-2xl m-auto px-32 ">News overview</h1>
+          <h1 className="text-2xl m-auto lg:px-0 lg:text-lg lg:font-semibold px-32 ">News overview</h1>
         </div>
       </section>
 
       {/* next section */}
-      <section className="px-5">
+      <section className="px-5 lg:hidden">
         <div className="max-w-[78rem] px-32 bg-white mx-auto">
           <div className="grid grid-cols-2 items-center pt-16 pb-3">
             <div>
               <h1 className="text-4xl font-semiboldbold text-[#0077B3] ">Calender</h1>
             </div>
-            <div className="flex gap-6">
+            <div className="flex lg:flex-col gap-6">
               <div className="py-2 px-3 shade font-bold  text-lg  w-64">
                 All categories
               </div>
@@ -257,7 +257,7 @@ export default function Home() {
           </div>
 
           {/* next this in this section */}
-          <div className="grid grid-cols-4 text-xl  items-center gap-6 pt-10">
+          <div className="grid lg:grid-cols-1 grid-cols-4 text-xl  items-center gap-6 pt-10">
             {[
               {
                 item: "PhD Defences"
@@ -292,22 +292,22 @@ export default function Home() {
       </section>
       {/* nextsection to calender */}
 
-      <section className="px-5">
-        <div className="max-w-[78rem] mx-auto  py-16 bg-white">
-          <div className="bg-[#0077B3] px-20 max-w-5xl mx-auto py-16 items-center flex justify-between">
-            <div className="text-2xl font-semibold text-white">
-              <p>Do you also want to change your world?</p>
+      <section className="px-5 lg:px-4">
+        <div className="max-w-[78rem] lg:max-w-7xl mx-auto lg:py-0  py-16 bg-white">
+          <div className="bg-[#0077B3] px-20 lg:px-6 max-w-5xl lg:max-w-7xl mx-auto lg:pt-8 py-12 items-center flex lg:flex-col justify-between">
+            <div className="text-2xl lg:text-[1.3rem] lg:text-center lg:max-w-[18rem] font-semibold text-white">
+              <p>Working at VU Amsterdam?</p>
             </div>
-            <div className="justify-center bg-white text-black">
-              <p className="text-2xl font-semibold px-7 py-3 text-[#333333]">Visit the VU Master's Event</p>
+            <div className="justify-center  bg-white text-black lg:mt-10">
+              <p className="text-2xl  font-semibold px-7 py-3 lg:max-w-xs lg:text-center  text-[#333333]">Take a look at our vacancies!</p>
             </div>
           </div>
         </div>
       </section>
       {/* We are VU Amsterdam */}
-      <section className="">
-        <div className="max-w-[78rem] mx-auto overflow-hidden  py-20 bg-white">
-          <div className="flex -ml-40">
+      <section className="block lg:hidden">
+        <div className="max-w-[78rem] mx-auto overflow-hidden py-20 bg-white">
+          <div className="flex lg:hidden -ml-40">
             {[1, 2, 3, 4, 5].map((val, idx) => {
               return (
                 <div className="max-w-[23%] px-8  basis-[23%] flex-grow-0 flex-shrink-0 ">
@@ -319,34 +319,42 @@ export default function Home() {
         </div>
       </section>
       {/* Ukraine section */}
-      <section className="px-5">
-        <div className="max-w-[78rem] mx-auto px-32 gap-10 bg-[#FAF7F5] py-20 grid grid-cols-2">
+      <section className="px-5 lg:hidden">
+        <div className="max-w-[78rem] mx-auto lg:px-0 px-32 lg:gap-0 gap-10 bg-[#FAF7F5] lg:py-0 py-20 grid grid-cols-2 lg:flex">
           {[1].map((value, idx) => {
             return (
-              <div className="bg-white pt-8 px-4 pb-44 shade max-w-xs">
+              <div className="bg-white lg:max-w-2xl pt-8 px-4 pb-44 lg:pb-28 shade max-w-xs">
                 <h1 className="text-2xl">VIJ Campus Tour</h1>
               </div>
             )
           })}
         </div>
       </section>
+      {/* Ukraine section  mobile*/}
+      <section className="hidden lg:block bg-[#FAF7F5] ">
+        <div className="pb-24 bg-white p-10 shade m-5">
+          <div className="">
+            <h1 className="text-xl text-[#008058]">VIJ Campus Tour</h1>
+          </div>
+        </div>
+      </section>
 
-      <section className="px-5">
-        <div className="max-w-[78rem] lg:max-w-full lg:px-2 px-32 bg-white py-16 mx-auto">
+      <section className="px-5 lg:px-0">
+        <div className="max-w-[78rem] lg:max-w-full lg:px-0 px-32 bg-white py-16 mx-auto">
           {/* next this in this section */}
-          <div className="grid lg:grid-cols-1 grid-cols-3 gap-6 ">
+          <div className="grid lg:grid-cols-1 grid-cols-3 lg:gap-0 gap-6">
             {data3.map((val, index) => {
               return (
                 <div className="">
                   <div>
-                    <h1 className={`text-[2.30rem] ${index === 1 ? "text-[#CC4100]" : index === 0 ? "text-[#0077B3]" : "text-[#008053]"}`}>{val.item}</h1>
+                    <h1 className={`text-[2.30rem] lg:font-normal lg:px-6 lg:text-[1.5rem] ${index === 1 ? "text-[#CC4100]" : index === 0 ? "text-[#0077B3]" : "text-[#008053]"}`}>{val.item}</h1>
                   </div>
                   <div className=" h-[80%] flex flex-col justify-between relative">
-                    <div className="shade flex justify-beteen h-full flex-col px-7 py-5">
+                    <div className="shade flex justify-beteen h-full flex-col px-7 py-5 lg:pb-16 ">
                       {val.desc.map((v, i) => {
                         return (
                           <div className="flex justify-between">
-                            <div className="mt-[0.35rem] text-lg  font-semibold">
+                            <div className="mt-[0.35rem] text-lg font-normal ">
                               {v}
                             </div>
                             <svg Name="fill-[#000000]" xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24" fill="#000000">
@@ -356,7 +364,18 @@ export default function Home() {
                         )
                       })}
                     </div>
-                    <div className="flex gap-1 px-7  items-center absolute bottom-3">
+                    {/* Icons mobile version */}
+                    <div className="sm:flex gap-2 pl-6 pr-16 hidden items-center ">
+                      {val.icons.map((e, idx) => {
+                        return (
+                          <div className="h-12 " key={idx}>
+                            <img className="w-full h-full object-cover object-center aspect-video" src={e} alt="" />
+                          </div>
+                        )
+                      })}
+                    </div>
+                    {/* icons desktop version */}
+                    <div className="flex gap-1 px-7 lg:hidden items-center absolute bottom-3">
                       {val.icons.map((e, idx) => {
                         return (
                           <div className="h-12" key={idx}>
@@ -373,12 +392,12 @@ export default function Home() {
         </div>
       </section>
       {/* last section footer */}
-      <section className="px-5">
-        <div className="max-w-[78rem] py-4  space-y-6 px-32 bg-[#0077b3] text-white mx-auto">
-          <div className="flex lg:grid lg:grid-cols-2 gap-5 ">
+      <section className="px-5 lg:px-0 lg:font-extrabold">
+        <div className="max-w-[78rem] py-4 lg:space-y-0 space-y-6 lg:px-6 px-32 bg-[#0077b3] text-white mx-auto">
+          <div className="flex lg:grid lg:grid-cols-2 gap-5 lg:gap-0">
             {["Privacy Statement", "Disclaimer", "Safety at VU Amsterdam", "Colofon", "Cookie Settings", "Web archive"].map((val, index) => {
               return (
-                <div className="mt-4 flex gap-1 items-center">
+                <div className="mt-4 lg:mt-2 flex gap-1 items-center">
                   <h1 className="text-md font-medium tracking-wide whitespace-nowrap ">{val}</h1>
                   <svg Name="fill-[#000000]" xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24" fill="#000000">
                     <path d="M20 12L4 12M20 12L14 18M20 12L14 6" stroke="white" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
@@ -387,8 +406,8 @@ export default function Home() {
               )
             })}
           </div>
-          <div className="font-medium">
-            <h1>Copyright &copy;
+          <div className="font-medium lg:pb-4 lg:pt-5">
+            <h1 className="lg:max-w-xs">Copyright &copy;
               2023 - Vrije Universiteit Amsterdam</h1>
           </div>
         </div>

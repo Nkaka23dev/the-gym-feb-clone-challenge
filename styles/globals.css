@@ -3,7 +3,7 @@
 @tailwind utilities; 
 
 body{
-   @apply  bg-[#EEEBE9]
+   @apply bg-[#EEEBE9] lg:bg-white
 }
 .shade{
   box-shadow: 0 0 60px 0 rgb(0 0 0 / 10%);
