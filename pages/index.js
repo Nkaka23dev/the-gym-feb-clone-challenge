@@ -353,7 +353,7 @@ export default function Home() {
                     <div className="shade flex justify-beteen h-full flex-col px-7 py-5 lg:pb-16 ">
                       {val.desc.map((v, i) => {
                         return (
-                          <div className="flex justify-between">
+                          <div className="flex justify-between items-center">
                             <div className="mt-[0.35rem] text-lg font-normal ">
                               {v}
                             </div>
