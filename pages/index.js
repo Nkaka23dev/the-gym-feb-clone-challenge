@@ -1,9 +1,7 @@
 import Navbar from "@/components/Navbar";
-import { data2, data3 } from "@/data";
+import { data2, data3, myImage } from "@/data";
 import Link from "next/link";
-import { MdArrowForwardIos, MdOutlineArrowBackIosNew } from "react-icons/md";
 import { RxDotFilled } from "react-icons/rx";
-
 import localFont from '@next/font/local'
 
 const robo = localFont({ src: '../public/roboto-latin-400-normal.woff2', display: 'swap' })
@@ -76,9 +74,13 @@ export default function Home() {
             img: "./tt.png"
           },].map((val, index) => {
             return (
-              <div key={index} className="flex lg:flex-col  space-x-4 items-center justify-between">
-                <img className="w-10 md:w-7" src={val.img} alt="" />
-                <p className={`only:text-md lg:text-sm tracking-wider font-semibold ${robo.className}`}>31.704 students</p>
+              <div key={index} className="flex lg:flex-col  space-x-2 items-center justify-between">
+                <div className="">
+                  <img className={` ${index === 0 ? "mt-3 w-11" : "w-9"} ${index === 2 || index === 1 ? "-mt-1 w-9" : "w-9"} md:w-7`} src={val.img} alt="" />
+                </div>
+                <div>
+                  <p className={`only:text-md lg:text-sm tracking-wider font-semibold ${robo.className}`}>31.704 students</p>
+                </div>
               </div>
             )
           })}
@@ -130,68 +132,74 @@ export default function Home() {
       {/* impact */}
       <section className="px-5">
         <div className="max-w-[78rem] mx-auto py-10 pt-16 bg-[#FAF7F5]">
-          <h1 className="text-4xl font-medium px-32 text-[#cc4100]">Impact</h1>
+          <h1 className="text-[2.4rem]  px-32 text-[#cc4100]">Impact</h1>
         </div>
       </section>
 
       {/* second background */}
-      <section className="relative">
-        <div className="max-w-[78rem]  mx-auto py-72" style={{
+      <section className="">
+        <div className="max-w-[78rem]  mx-auto py-72 relative" style={{
           backgroundImage: `url("https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/883cc0a7-cdf9-41aa-b410-2bce37f7a554/001_VU_com_Davide-Ianuzzi_PeGe_2022_PG006556_lowres%5B28%5D.jpg?w=1250&h=600&fit=clip&rect=336%2C153%2C1664%2C799&fm=jpg&auto=format&dpr=1")`,
           backgroundColor: '#cccccc', /* Used if the image is unavailable */
           backgroundPosition: 'center', /* Center the image */
           backgroundRepeat: 'no-repeat', /* Do not repeat the image */
           backgroundSize: 'cover' /* Resize the background image to cover the entire container */
         }}>
-
-        </div>
-        <div className="max-w-sm mx-auto px-20 bg-[#f2efed] py-16 flex justify-between">
-          <div className="items-center justify-center lg:flex absolute right-[26rem] bottom-16">
-            <div className="p-4 px-10 py-10 space-y-6 bg-white lg:-mt-24 ">
-              <h5 className="text-[24px] leading-[36px] font-light text-orange-900">
+          <div className="items-center impact justify-center lg:flex absolute right-[16.4rem] -bottom-24">
+            <div className="pt-16 pl-16   space-y-6 bg-white grid lg:-mt-24 ">
+              <h5 className="text-[24px]  leading-[36px] font-light text-[#CC4100]">
                 Science to impact
               </h5>
-              <p className="text-lg leading-[30px] max-w-lg">
+              <p className={`text-lg opacity-80 mr-16 leading-[30px] max-w-md ${robo.className}`}>
                 An interview with entrepreneurial scientist Davide Iannuzzi,
                 Chief Impact Officer of Vrije Universiteit Amsterdam
               </p>
               <Link
                 href="#"
-                className="flex items-center h-full gap-4 bg-white"
+                className={`${robo.className} flex items-center gap-6 bg-white`}
               >
-                <span className="text-base font-bold">Read more</span>
-
+                <span className={`${robo.className}  text-lg `}>Read more</span>
+                <svg Name="fill-[#000000]" className="" xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24" fill="#000000">
+                  <path d="M20 12L4 12M20 12L14 18M20 12L14 6" stroke="#000000" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
               </Link>
-              <div className="flex items-center justify-end gap-4 mt-6">
+              <div className="flex items-center ml-auto gap-4">
                 <div className="flex items-center">
-                  <RxDotFilled className="text-6xl text-orange-900" />
-                  <RxDotFilled className="text-4xl text-orange-300" />
-                  <RxDotFilled className="text-4xl text-orange-300" />
-                  <RxDotFilled className="text-4xl text-orange-300" />
+                  <RxDotFilled className="text-6xl text-[#CC4100]" />
+                  <RxDotFilled className="text-4xl text-[#CC4100]" />
+                  <RxDotFilled className="text-4xl text-[#CC4100]" />
+                  <RxDotFilled className="text-4xl text-[#CC4100]" />
                 </div>
-                <div className="flex items-center gap-4 p-4 bg-[#fcd3b6]">
-                  <MdOutlineArrowBackIosNew />
-                  <MdArrowForwardIos />
+                <div className="py-2 px-1 cursor-pointer   flex gap-4 bg-[#FCD3B6]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6" /></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6" /></svg>
                 </div>
               </div>
             </div>
           </div>
-
+        </div>
+        <div className="bg-[#FAF7F5] max-w-[78rem] mx-auto py-16 ">
         </div>
       </section>
       {/* card that will trigger first coursel on an old man */}
-      <section className="px-5">
+      <section className="px-5 bg-red-500">
 
       </section>
       {/* Ukraine section */}
       <section className="px-5 lg:px-0">
         <div className="max-w-[78rem] lg:max-w-full lg:px-2 mx-auto px-28 gap-10 bg-white py-20 grid lg:grid-cols-1 grid-cols-2">
-          {[1, 2].map((value, idx) => {
+          {[{ name: "Ukraine", desc: "Information and support" }, { name: "VU & Corona", desc: "" }].map((value, idx) => {
             return (
-              <div className="bg-white pt-10 px-6 pb-20 shade">
-                <h1 className={`font-medium text-2xl ${idx === 0 ? "text-[#008058]" : "text-black"}`}>Ukraine</h1>
+              <div className="bg-white pt-10 px-6 flex space-y-20 justify-between shade">
+                <div>
+                  <h1 className={`font-medium text-2xl ${idx === 0 ? "text-[#008058]" : "text-black"}`}>{value.name}</h1>
+                  <p className="py-5">{value.desc}</p>
+                </div>
                 <div className="mt-4">
-                  <p>Information and support</p>
+
+                  <svg Name="fill-[#000000]" className="self-end mt-7 mb-3 ml-auto" xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24" fill="#000000">
+                    <path d="M20 12L4 12M20 12L14 18M20 12L14 6" stroke="#000000" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
                 </div>
               </div>
             )
@@ -201,36 +209,45 @@ export default function Home() {
       {/* next section */}
       <section className="px-5 lg:px-0">
         {/* impact */}
-        <div className="max-w-[78rem] mx-auto lg:mr-auto lg:py-0 py-10 bg-[#FAF7F5]">
-          <h1 className="text-4xl lg:px-0 px-32 text-[#3B218F]">News</h1>
+        <div className="max-w-[78rem] mx-auto lg:mr-auto lg:py-0 pt-10 bg-[#FAF7F5]">
+          <h1 className="text-4xl lg:px-0 px-20 text-[#3B2171]">News</h1>
         </div>
         <div className="max-w-[78rem] mx-auto lg:px-0 px-20 bg-[#FAF7F5] grid lg:pb-0 pb-20">
           <div className="flex lg:flex-col justify-between gap-10">
             <div className="">
-              {[1, 2].map((value, idx) => {
+              {["https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/83279044-76f1-4736-8fe6-383f0530dae1/2N3337X.jpg?w=1250&h=600&fit=clip&rect=0,1254,6720,3226", "https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/d8e771d2-c135-499c-a67c-d1da825f453b/robofinch%20def.png"].map((value, idx) => {
                 return (
-                  <div className="grid lg:hidden  grid-cols-7 gap-7 lg:mt-5 mt-10">
+                  <div key={idx} className="grid lg:hidden  grid-cols-7 gap-7 lg:mt-5 mt-10">
                     <div className="col-span-4">
-                      <img src="https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/620eb879-353a-48fc-88d7-ee3c1324aec8/VUvlag.png" className="aspect-video h-52" alt="" />
+                      <img src={value} className="aspect-video h-52" alt="" />
                     </div>
-                    <div className="col-span-3">
-                      <h1>08 Feb 2023</h1>
-                      <h1 className="text-2xl mt-4 tracking-wide max-w-[16rem]">Earthquakes Turkey and
+                    <div className="col-span-3 grid">
+                      <h1 className={`text-[#3B2171] ${robo.className} text-lg font-semibold`}>08 Feb 2023</h1>
+                      <h1 className="text-2xl -mt-8 tracking-wide max-w-[16rem]">Earthquakes Turkey and
                         Syria</h1>
+                      <svg Name="fill-[#000000]" className="self-end ml-auto" xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24" fill="#000000">
+                        <path d="M20 12L4 12M20 12L14 18M20 12L14 6" stroke="#000000" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
                     </div>
+
                   </div>
                 )
               })}
             </div>
             <div className="space-y-20 flex-1 ">
-              {[1, 2, 3].map((value, idx) => {
+              {["https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/45e509b2-1cf3-49a7-b40d-53310c2e2219/7%20ton%20voor%20welzijn%20Oekrai%CC%88ne%20vluchtelingen_afb_1250x600.jpg", "https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/c49919f7-968b-41d7-8776-e9e555f737c5/Sapiens_VUweb_2200x720.jpg?w=1250&h=600&fit=clip&rect=350,0,1500,720", "https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/f9f7b751-4e22-4175-add9-3aec344e16ed/Wouter-Botzen.png"].map((value, idx) => {
                 return (
                   <div className="flex gap-3 mt-10">
-                    <img src="https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/620eb879-353a-48fc-88d7-ee3c1324aec8/VUvlag.png" className="aspect-video w-32 h-24 object-cover aspect-video " alt="" />
-                    <div className="">
-                      <h1>08 Feb 2023</h1>
-                      <h1 className="tracking-wide max-w-[10rem] text-lg mt-2">Earthquakes Turkey and
-                        Syria</h1>
+                    <img src={value} className="aspect-square w-32 h-24 object-cover  " alt="" />
+                    <div className="flex justify-between">
+                      <div>
+                        <h1 className={`text-[#3B2171] ${robo.className} text-lg font-semibold`}>08 Feb 2023</h1>
+                        <h1 className="tracking-wide max-w-[10rem] text-lg mt-2">Earthquakes Turkey and
+                          Syria</h1>
+                      </div>
+                      <svg Name="fill-[#000000]" className="self-end" xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24" fill="#000000">
+                        <path d="M20 12L4 12M20 12L14 18M20 12L14 6" stroke="#000000" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
                     </div>
                   </div>
                 )
@@ -239,7 +256,12 @@ export default function Home() {
           </div>
         </div>
         <div className="max-w-[78rem] grid mx-auto py-10 bg-[#FAF7F5]">
-          <h1 className="text-2xl m-auto lg:px-0 lg:text-lg lg:font-semibold px-32 ">News overview</h1>
+          <div className="m-auto flex items-center gap-2">
+            <h1 className={`text-xl ${robo.className}  lg:px-0 lg:text-lg`}>News overview</h1>
+            <svg Name="fill-[#000000]" xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24" fill="#000000">
+              <path d="M20 12L4 12M20 12L14 18M20 12L14 6" stroke="#000000" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
         </div>
       </section>
 
@@ -304,15 +326,15 @@ export default function Home() {
             })}
           </div>
           <div className="flex justify-between items-center pb-16">
-            <div className="flex gap-4">
+            <div className="flex gap-4 items-center">
               <h1 className={`${robo.className} text-xl font-normal`}>View calendar</h1>
               <svg Name="fill-[#000000]" xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24" fill="#000000">
-                <path d="M20 12L4 12M20 12L14 18M20 12L14 6" stroke="#000000" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M20 12L4 12M20 12L14 18M20 12L14 6" stroke="#000000" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </div>
-            <div className="ml-auto px-1 cursor-pointer  flex gap-4 bg-[#FCD3B6]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6" /></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6" /></svg>
+            <div className="ml-auto px-1 cursor-pointer py-2 flex gap-4 bg-[#DFF2FD]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6" /></svg>
             </div>
           </div>
         </div>
@@ -337,16 +359,16 @@ export default function Home() {
           <div className="max-w-[78rem] mr-auto lg:mr-auto lg:py-0">
             <h1 className={`text-4xl lg:px-0 px-36 text-[#CC4100] pb-10 pt-20`}>We are VU Amsterdam</h1>
           </div>
-          <div className="flex lg:hidden -ml-56">
-            {[1, 2, 3, 4, 5].map((val, idx) => {
+          <div className="flex lg:hidden -ml-56 pb-32">
+            {["https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/ee314579-ae99-4e24-a166-e4275b7b26d7/MH_G3A6804_Spinozaprijs_Hero_2200x720_3.png?w=397&h=595&fit=clip&rect=673%2C125%2C397%2C595&fm=jpg&auto=format&dpr=1", "https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/af80e288-3224-4918-a78c-14c99e741d32/Gustaaf-Peek_Foto_Maya-Hermes_2134x1600.jpg?fm=jpg&auto=format&dpr=1", "https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/c4f807f9-18b8-4d8a-ab3d-006f345289fb/DreamTeams_webbanner_1600x750_tcm289-955609.jpg?fm=jpg&auto=format&dpr=1", "https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/9e00b0fc-d631-4c75-ae17-df91cdf62d93/Peter%20Valckx_IMG_7957_Frank_van_Harmelen_MA_AI_Verander.jpg?w=397&h=595&fit=clip&rect=2558%2C0%2C2562%2C3840&fm=jpg&auto=format&dpr=1", "https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/ee314579-ae99-4e24-a166-e4275b7b26d7/MH_G3A6804_Spinozaprijs_Hero_2200x720_3.png?w=397&h=595&fit=clip&rect=673%2C125%2C397%2C595&fm=jpg&auto=format&dpr=1"].map((val, idx) => {
               return (
-                <div className="max-w-[23%] px-8 duration-300  cursor-pointer hover:shadow-xl basis-[23%] flex-grow-0 flex-shrink-0 ">
-                  <img src="https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/af80e288-3224-4918-a78c-14c99e741d32/Gustaaf-Peek_Foto_Maya-Hermes_2134x1600.jpg?fm=jpg&auto=format&dpr=1" alt="" />
+                <div className="max-w-[23%] px-8 duration-300 h-full cursor-pointer basis-[23%] flex-grow-0 flex-shrink-0 ">
+                  <img className="object-cover object-center aspect-video w-full h-full" src={val} alt="" />
                   <div className="grid space-y-4 mt-8">
                     <h1 className="text-2xl text-[#CC4100] ">Vrije Schrijver (Writer in
                       Residence)</h1>
-                    <p className={`${robo.className} text-[1.20rem]`}>Read more</p>
-                    <div className="ml-auto  py-5 ">
+                    <p className={`${robo.className} text-[1.15rem]`}>Read more</p>
+                    <div className="ml-auto  py-3">
                       <svg Name="fill-[#000000]" xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24" fill="#000000">
                         <path d="M20 12L4 12M20 12L14 18M20 12L14 6" stroke="#000000" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
@@ -356,7 +378,7 @@ export default function Home() {
               )
             })}
           </div>
-          <div className="ml-auto py-2 px-1 mt-10 cursor-pointer  flex gap-4 bg-[#FCD3B6]">
+          <div className="ml-auto py-2 px-1 mt-28  flex gap-4 bg-[#FCD3B6]">
             <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6" /></svg>
             <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6" /></svg>
           </div>
@@ -416,18 +438,18 @@ export default function Home() {
                     <div className="sm:flex gap-2 pl-6 pr-16 hidden items-center ">
                       {val.icons.map((e, idx) => {
                         return (
-                          <div className="h-12 " key={idx}>
+                          <div className="h-12" key={idx}>
                             <img className="w-full h-full object-cover object-center aspect-video" src={e} alt="" />
                           </div>
                         )
                       })}
                     </div>
                     {/* icons desktop version */}
-                    <div className="flex gap-1 px-7 lg:hidden items-center absolute bottom-3">
+                    <div className="flex space-x-1 gap-1 px-7 -right-[0.6rem] lg:hidden items-center absolute bottom-3">
                       {val.icons.map((e, idx) => {
                         return (
-                          <div className="h-12" key={idx}>
-                            <img className="w-full h-full object-cover object-center aspect-video" src={e} alt="" />
+                          <div key={idx} className="px-[0.1rem] bg-[#0077B3]">
+                           {e}
                           </div>
                         )
                       })}

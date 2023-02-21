@@ -6,14 +6,14 @@ export default function Modal({ setShow }) {
     setShow(false);
   };
   return (
-    <section className="bg-white h-screen z-50 max-w-7xl mx-auto fixed grid inset-0">
+    <section className="bg-white group h-screen z-50 max-w-7xl mx-auto fixed grid inset-0">
       <div
         onClick={handleClick}
         className="bg-[#F2EFED] ml-auto p-5 cursor-pointer absolute top-0 right-0"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className=""
+          className="transform group-hover:rotate-180 transition duration-500 ease-in-out"
           width="30px"
           height="30px"
           viewBox="0 0 64 64"
