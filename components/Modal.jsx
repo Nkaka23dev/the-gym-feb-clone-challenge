@@ -25,12 +25,12 @@ export default function Modal({ setShow }) {
         </svg>
       </div>
       <div className="">
-        <div className="flex justify-between   flex-col space-y-10 lg:space-y-6 lg:pt-20 pt-52 cursor-pointer lg:px-6  px-36">
+        <div className="flex justify-between flex-col space-y-10 lg:space-y-6 lg:pt-20 pt-52 cursor-pointer lg:px-6 px-36">
           {["Study at VU Amsterdam", "Research", "About VU Amsterdam", "VU press office", "Alumni", "Student", "Employee"].map((e, i) => {
             return (
               <Link href={e}>
-              <div key={i} className="flex max-w-sm items-center  justify-between">
-                <p className="text-[1.4rem] lg:text-lg whitespace-nowrap font-semibold">
+              <div key={i} className="flex lg:flex-wrap lg: max-w-sm items-center justify-between">
+                <p className="text-[1.4rem] lg:text-lg whitespace-nowrap lg:whitespace-normal font-semibold">
                  {e}
                 </p>
                 {i === 0 || i === 1 ? (
@@ -52,7 +52,7 @@ export default function Modal({ setShow }) {
                   </svg>
                 ) : (
                   <svg
-                    className="ml-36"
+                    className="ml-36 lg:ml-0"
                     Name="fill-[#000000]"
                     xmlns="http://www.w3.org/2000/svg"
                     width="30px"

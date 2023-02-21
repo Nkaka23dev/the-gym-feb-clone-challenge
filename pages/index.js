@@ -19,9 +19,9 @@ export default function Home() {
       </section>
       <section className="px-5 lg:px-0 -mt-16 relative z-10">
         <div className="max-w-[61rem] mx-auto lg:grid-cols-1 grid grid-cols-5 items-center ">
-          <div className="py-8 relative lg:px-4 px-10 col-span-3 flex justify-between bg-[#0077B3]">
+          <div className="py-8  relative lg:px-4 px-10 col-span-3 flex justify-between bg-[#0077B3]">
             <input type="text" placeholder="Search..." className="w-full bg-[#0077B3] placeholder-white font-light text-white text-[1.35rem] lg:text-[1.1rem] caret-violet-50 border-b border-white focus:outline-none" />
-            <svg className=" text-white absolute lg:right-2 lg:top-7 right-10 top-[2.3rem]"
+            <svg className=" text-white absolute lg:right-2 lg:top-8 right-10 top-[2.3rem]"
               xmlns="http://www.w3.org/2000/svg"
               width="25"
               height="25"
@@ -68,7 +68,7 @@ export default function Home() {
       </section>
 
       <section className="px-5 lg:px-0 -mt-10 lg:-mt-0 lg:pb-16">
-        <div className="max-w-[78rem] mx-auto lg:px-0 lg:pt-2 px-16 bg-white lg:pb-7 pb-40 pt-10 flex  justify-around items-center">
+        <div className="max-w-[78rem] mx-auto lg:px-5 lg:pt-2 px-16 bg-white lg:pb-7 pb-40 pt-10 flex  justify-around items-center lg:justify-center">
           {[{
             text: "31.704 students",
             img: "./hat.png"
@@ -180,7 +180,7 @@ export default function Home() {
                   <RxDotFilled className="text-4xl text-[#CC4100]" />
                   <RxDotFilled className="text-4xl text-[#CC4100]" />
                 </div>
-                <div className="py-2 px-1 cursor-pointer   flex gap-4 bg-[#FCD3B6]">
+                <div className="py-2 px-1 cursor-pointer flex gap-4 bg-[#FCD3B6]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6" /></svg>
                   <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6" /></svg>
                 </div>
@@ -389,7 +389,7 @@ export default function Home() {
               )
             })}
           </div>
-          <div className="ml-auto py-2 px-1 mt-28  flex gap-4 bg-[#FCD3B6]">
+          <div className="ml-auto py-2 px-1 mt-28 cursor-pointer  flex gap-4 bg-[#FCD3B6]">
             <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6" /></svg>
             <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6" /></svg>
           </div>
