@@ -14,7 +14,7 @@ export default function Navbar() {
   };
   return (
     <section className="px-5 ">
-      <div className="max-w-[78rem] fixed z-20 left-0 right-0 top-0 shade bg-white mx-auto  flex justify-between items-stretch">
+      <div className="max-w-[78rem] fixed z-20 left-0 right-0 top-0 shade2 bg-white mx-auto  flex justify-between items-stretch">
         <div className="py-[1.2rem] lg:py-[0.8rem] px-10 lg:px-5">
           <img
             className="w-44"

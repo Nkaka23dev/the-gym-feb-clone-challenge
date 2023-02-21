@@ -3,6 +3,8 @@ import { data2, data3, myImage } from "@/data";
 import Link from "next/link";
 import { RxDotFilled } from "react-icons/rx";
 import localFont from '@next/font/local'
+import News from "@/components/News";
+import Science from "@/components/Science";
 
 const robo = localFont({ src: '../public/roboto-latin-400-normal.woff2', display: 'swap' })
 
@@ -12,7 +14,7 @@ export default function Home() {
       <Navbar />
       <section className="px-5 lg:px-0 mt-20 lg:mt-16 lg:max-w-[98rem]">
         <div className="max-w-[78rem] shade  bg-[#FDFDFD] mx-auto grid lg:pb-[4rem] pb-[6rem] pt-7">
-          <p className="m-auto lg:px-6 px-3 lg:text-[2rem] text-[2.8rem] lg:max-w-full  max-w-[52rem] font-light text-[#333333] lg:leading-10">You don’t just become something, you become someone</p>
+          <p className="m-auto lg:px-6 px-3 lg:text-[2rem] text-[2.8rem] lg:max-w-full  max-w-[52rem] font-light text-[#333333] lg:leading-8">You don’t just become something, you become someone</p>
         </div>
       </section>
       <section className="px-5 lg:px-0  -mt-10 relative z-10">
@@ -46,15 +48,22 @@ export default function Home() {
         </div>
       </section>
       {/* background image */}
-      <section className="-mt-12">
-        <div className="max-w-[130rem]  mx-auto py-60" style={{
-          backgroundImage: `url("https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/883a3f00-09ba-48b4-ba79-5de8eee6b868/CH_C119530b_BA_home_hero_2200x720.jpg?w=2200&h=720&fit=clip&rect=0,1,2200,720")`,
+      <section className="-mt-12 block lg:hidden">
+        <div className="max-w-[130rem]  mx-auto h-[30rem] lg:h-[20rem]" style={{
+          backgroundImage: `url("https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/4e8b9c68-eb73-43dd-804f-fcc68845046e/RP_61_C%26M_Homepage_2200x720%5B41%5D.jpg")`,
           backgroundColor: '#cccccc', /* Used if the image is unavailable */
           backgroundPosition: 'center', /* Center the image */
           backgroundRepeat: 'no-repeat', /* Do not repeat the image */
           backgroundSize: 'cover' /* Resize the background image to cover the entire container */
         }}>
 
+        </div>
+      </section>
+
+      {/* backgound sm */}
+      <section className="lg:block hidden">
+        <div className="">
+          <img src="https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/4e8b9c68-eb73-43dd-804f-fcc68845046e/RP_61_C%26M_Homepage_2200x720%5B41%5D.jpg" className="object-cover aspect-video" alt="" />
         </div>
       </section>
 
@@ -74,9 +83,9 @@ export default function Home() {
             img: "./tt.png"
           },].map((val, index) => {
             return (
-              <div key={index} className="flex lg:flex-col  space-x-2 items-center justify-between">
+              <div key={index} className="flex lg:flex-col lg:justify-center space-x-2 items-center justify-between">
                 <div className="">
-                  <img className={` ${index === 0 ? "mt-3 w-11" : "w-9"} ${index === 2 || index === 1 ? "-mt-1 w-9" : "w-9"} md:w-7`} src={val.img} alt="" />
+                  <img className={`lg:mr-7 ${index === 0 ? "mt-3 w-11" : "w-9"} ${index === 2 || index === 1 ? "-mt-1 w-9" : "w-9"} md:w-7`} src={val.img} alt="" />
                 </div>
                 <div>
                   <p className={`only:text-md lg:text-sm tracking-wider font-semibold ${robo.className}`}>31.704 students</p>
@@ -131,22 +140,22 @@ export default function Home() {
       </section>
       {/* impact */}
       <section className="px-5">
-        <div className="max-w-[78rem] mx-auto py-10 pt-16 bg-[#FAF7F5]">
-          <h1 className="text-[2.4rem]  px-32 text-[#cc4100]">Impact</h1>
+        <div className="max-w-[78rem] mx-auto lg:py-6 py-10 pt-16 bg-[#FAF7F5]">
+          <h1 className="text-[2.4rem] lg:px-2  px-32 text-[#cc4100]">Impact</h1>
         </div>
       </section>
 
-      {/* second background */}
-      <section className="">
-        <div className="max-w-[78rem]  mx-auto py-72 relative" style={{
+      {/* second background impact on desk top */}
+      <section className="block lg:hidden">
+        <div className="max-w-[78rem]  mx-auto py-72 lg:py-52 relative" style={{
           backgroundImage: `url("https://assets.vu.nl/d8b6f1f5-816c-005b-1dc1-e363dd7ce9a5/883cc0a7-cdf9-41aa-b410-2bce37f7a554/001_VU_com_Davide-Ianuzzi_PeGe_2022_PG006556_lowres%5B28%5D.jpg?w=1250&h=600&fit=clip&rect=336%2C153%2C1664%2C799&fm=jpg&auto=format&dpr=1")`,
           backgroundColor: '#cccccc', /* Used if the image is unavailable */
           backgroundPosition: 'center', /* Center the image */
           backgroundRepeat: 'no-repeat', /* Do not repeat the image */
           backgroundSize: 'cover' /* Resize the background image to cover the entire container */
         }}>
-          <div className="items-center impact justify-center lg:flex absolute right-[16.4rem] -bottom-24">
-            <div className="pt-16 pl-16   space-y-6 bg-white grid lg:-mt-24 ">
+          <div className="items-center lg:bottom-0 lg:right-0 impact justify-center lg:flex absolute right-[16.4rem] -bottom-24">
+            <div className="pt-16 pl-16  space-y-6 bg-white grid lg:-mt-24 ">
               <h5 className="text-[24px]  leading-[36px] font-light text-[#CC4100]">
                 Science to impact
               </h5>
@@ -181,6 +190,7 @@ export default function Home() {
         <div className="bg-[#FAF7F5] max-w-[78rem] mx-auto py-16 ">
         </div>
       </section>
+      <Science/>
       {/* card that will trigger first coursel on an old man */}
       <section className="px-5 bg-red-500">
 
@@ -207,7 +217,7 @@ export default function Home() {
         </div>
       </section>
       {/* next section */}
-      <section className="px-5 lg:px-0">
+      <section className="px-5 lg:hidden lg:px-0">
         {/* impact */}
         <div className="max-w-[78rem] mx-auto lg:mr-auto lg:py-0 pt-10 bg-[#FAF7F5]">
           <h1 className="text-4xl lg:px-0 px-20 text-[#3B2171]">News</h1>
@@ -264,7 +274,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+       <News/>
       {/* next section */}
       <section className="px-5 lg:hidden">
         <div className="max-w-[78rem] px-32 bg-white mx-auto">
@@ -435,11 +445,11 @@ export default function Home() {
                       })}
                     </div>
                     {/* Icons mobile version */}
-                    <div className="sm:flex gap-2 pl-6 pr-16 hidden items-center ">
+                    <div className="sm:flex gap-2 pl-6 -mt-14 pt-10  bg-white pr-16 hidden items-center ">
                       {val.icons.map((e, idx) => {
                         return (
-                          <div className="h-12" key={idx}>
-                            <img className="w-full h-full object-cover object-center aspect-video" src={e} alt="" />
+                          <div key={idx} className="px-[0.1rem] bg-[#0077B3]">
+                            {e}
                           </div>
                         )
                       })}
@@ -449,7 +459,7 @@ export default function Home() {
                       {val.icons.map((e, idx) => {
                         return (
                           <div key={idx} className="px-[0.1rem] bg-[#0077B3]">
-                           {e}
+                            {e}
                           </div>
                         )
                       })}
@@ -464,7 +474,7 @@ export default function Home() {
       {/* last section footer */}
       <section className={`${robo.className} px-5 lg:px-0 `}>
         <div className="max-w-[78rem] py-4 lg:space-y-0 space-y-6 lg:px-6 px-32 bg-[#0077b3] text-white mx-auto">
-          <div className="flex lg:grid lg:grid-cols-2 gap-5 lg:gap-0">
+          <div className="flex lg:grid lg:grid-cols-1 gap-5 lg:gap-0">
             {["Privacy Statement", "Disclaimer", "Safety at VU Amsterdam", "Colofon", "Cookie Settings", "Web archive"].map((val, index) => {
               return (
                 <div className="mt-4 lg:mt-2 flex gap-1 items-center">
