@@ -85,7 +85,7 @@ export default function Home() {
             return (
               <div key={index} className="flex lg:flex-col lg:justify-center space-x-2 items-center justify-between">
                 <div className="">
-                  <img className={`lg:mr-7 ${index === 0 ? "mt-3 w-11" : "w-9"} ${index === 2 || index === 1 ? "-mt-1 w-9" : "w-9"} md:w-7`} src={val.img} alt="" />
+                  <img className={`lg:mr-12 ${index === 0 ? "mt-3 w-11" : "w-9"} ${index === 2 || index === 1 ? "-mt-1 w-9" : "w-9"} md:w-7`} src={val.img} alt="" />
                 </div>
                 <div>
                   <p className={`only:text-md lg:text-sm tracking-wider font-semibold ${robo.className}`}>31.704 students</p>
